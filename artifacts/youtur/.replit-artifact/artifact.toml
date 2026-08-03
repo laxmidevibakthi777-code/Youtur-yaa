@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "YOUTUR — AI Creator Hub"
+description = "YOUTUR is a premium AI-powered YouTube Creator Platform. It helps creators analyze channels, generate AI-powered content (titles, descriptions, scripts, tags), improve SEO, and grow their channels. Includes a landing page, auth flows, onboarding, dashboard, channel analytics, AI Studio workspace, and settings — all with a dark luxury aesthetic."
+version = "1.0.0"
+id = "artifacts/youtur"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24407
+
+[services.development]
+run = "pnpm --filter @workspace/youtur run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/youtur", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/youtur/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24407"
+BASE_PATH = "/"

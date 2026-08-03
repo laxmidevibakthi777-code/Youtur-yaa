@@ -1,6 +1,6 @@
-# [Project name]
+# YOUTUR — AI Creator Hub
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+YOUTUR is a premium AI-powered YouTube Creator Platform that helps creators analyze channels, generate AI content, improve SEO, and grow faster.
 
 ## Run & Operate
 
