@@ -1,0 +1,265 @@
+Integrate the backend of the YOUTUR website with both the YouTube Data API v3 and the OpenRouter API.
+
+This is NOT a UI task.
+Do not redesign the interface.
+Keep the current premium UI exactly the same.
+
+==================================================
+1. API CONFIGURATION
+==================================================
+
+Create secure server-side environment variables.
+
+YOUTUBE_API_KEY=
+OPENROUTER_API_KEY=
+
+Never expose these keys in the frontend.
+
+==================================================
+2. YOUTUBE CHANNEL SEARCH
+==================================================
+
+When the user enters:
+
+• Channel URL
+• @username
+• Channel Name
+• Channel ID
+
+Automatically detect the input type.
+
+If it is a URL or Channel ID:
+→ Open that channel directly.
+
+If it is a channel name:
+→ Search YouTube.
+→ Show matching channels.
+→ Display:
+
+• Channel Logo
+• Banner
+• Channel Name
+• Handle
+• Verified Badge
+• Subscribers
+• Videos
+• Total Views
+• Country
+• Created Date
+• Short Description
+
+Each card has:
+
+"Analyze Channel"
+
+button.
+
+Retry button refreshes search.
+
+==================================================
+3. CHANNEL ANALYSIS
+==================================================
+
+After clicking Analyze:
+
+Fetch using YouTube API:
+
+Channel Info
+
+Statistics
+
+Uploads Playlist
+
+Latest Videos
+
+Thumbnails
+
+Titles
+
+Descriptions
+
+Tags
+
+Publishing Schedule
+
+Views
+
+Likes
+
+Comments
+
+Duration
+
+==================================================
+4. OPENROUTER AI
+==================================================
+
+Send the YouTube data to OpenRouter.
+
+Generate:
+
+Executive Summary
+
+Strengths
+
+Weaknesses
+
+Growth Opportunities
+
+SEO Score
+
+Brand Score
+
+CTR Suggestions
+
+Content Strategy
+
+Posting Schedule
+
+Audience Analysis
+
+Competitor Suggestions
+
+Growth Roadmap
+
+30 Day Plan
+
+90 Day Plan
+
+==================================================
+5. AI CONTENT STUDIO
+==================================================
+
+Generate buttons for:
+
+Titles
+
+Descriptions
+
+Tags
+
+Keywords
+
+Hashtags
+
+Scripts
+
+Community Posts
+
+Short Ideas
+
+Long Video Ideas
+
+Thumbnail Text
+
+Pinned Comment
+
+Video Chapters
+
+CTA
+
+SEO Checklist
+
+Title Variations
+
+Description Variations
+
+Hook Ideas
+
+Every button should call OpenRouter separately.
+
+Also add
+
+Generate All
+
+which generates everything together.
+
+==================================================
+6. LOADING
+==================================================
+
+While AI is generating:
+
+Show premium loader.
+
+Animated progress.
+
+Skeleton cards.
+
+Disable buttons.
+
+Prevent duplicate requests.
+
+==================================================
+7. ERROR HANDLING
+==================================================
+
+If YouTube API fails
+
+Show friendly error.
+
+Retry button.
+
+If OpenRouter fails
+
+Retry automatically once.
+
+Show readable error.
+
+==================================================
+8. CACHE
+==================================================
+
+Cache previous analyses.
+
+If the same channel is analyzed again within one hour:
+
+Load cached data instantly.
+
+==================================================
+9. PERFORMANCE
+==================================================
+
+Lazy loading.
+
+Code splitting.
+
+Debounced search.
+
+Abort previous requests.
+
+Fast API responses.
+
+==================================================
+10. SECURITY
+==================================================
+
+Never expose API keys.
+
+Validate requests.
+
+Sanitize input.
+
+Rate limit API calls.
+
+Prevent abuse.
+
+==================================================
+11. RESULT
+==================================================
+
+Everything must work end-to-end.
+
+Search → Select Channel → Analyze → AI Generation.
+
+No fake or placeholder data.
+
+All content must come from:
+
+YouTube Data API v3
+
++
+
+OpenRouter AI
+
+The website should behave like a production-ready AI SaaS platform with smooth loading, professional error handling, secure backend integration, and real AI-generated results.

@@ -1,0 +1,1 @@
+- [YOUTUR backend integration](youtur-backend.md) — YouTube + OpenRouter APIs wired server-side; Replit path routing forwards /api to port 8080 (no Vite proxy needed).
