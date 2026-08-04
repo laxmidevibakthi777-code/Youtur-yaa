@@ -64,9 +64,16 @@ export interface ChannelAnalysis {
   postingSchedule: string;
   audienceAnalysis: string;
   competitorSuggestions: string[];
+  competitorAnalysis: string;
   growthRoadmap: string;
   plan30Day: string[];
   plan90Day: string[];
+  titleSuggestions: string[];
+  videoDescription: string;
+  tags: string[];
+  keywords: string[];
+  hashtags: string[];
+  thumbnailIdeas: string[];
 }
 
 export async function analyzeChannel(channelData: unknown): Promise<ChannelAnalysis> {
@@ -77,7 +84,7 @@ export async function analyzeChannel(channelData: unknown): Promise<ChannelAnaly
     },
     {
       role: 'user',
-      content: `Analyze this YouTube channel data and return a JSON object with these exact keys:
+      content: `Analyze this YouTube channel data and return a JSON object with these exact keys (no extra text, no markdown fences):
 {
   "executiveSummary": "2-3 sentence overview of the channel's current position and potential",
   "strengths": ["array of 4-6 specific strengths"],
@@ -90,9 +97,16 @@ export async function analyzeChannel(channelData: unknown): Promise<ChannelAnaly
   "postingSchedule": "specific recommended posting schedule with reasoning",
   "audienceAnalysis": "detailed paragraph on audience demographics and behavior",
   "competitorSuggestions": ["array of 3-5 competitor channel names to study"],
+  "competitorAnalysis": "paragraph with detailed analysis of competitive landscape and differentiation tactics",
   "growthRoadmap": "paragraph describing the path to doubling subscribers",
-  "plan30Day": ["array of 5-7 specific 30-day action items"],
-  "plan90Day": ["array of 5-7 specific 90-day milestones"]
+  "plan30Day": ["array of 6 specific 30-day action items"],
+  "plan90Day": ["array of 6 specific 90-day milestones"],
+  "titleSuggestions": ["array of 5 high-CTR video title ideas tailored to this channel"],
+  "videoDescription": "a full optimized YouTube video description template with chapters and CTAs for this channel",
+  "tags": ["array of 15 SEO-optimized YouTube tags for this channel's niche"],
+  "keywords": ["array of 10 primary keywords to target"],
+  "hashtags": ["array of 10 trending hashtags with # prefix"],
+  "thumbnailIdeas": ["array of 5 specific thumbnail concept ideas describing visuals, colors, text overlay"]
 }
 
 Channel Data:
